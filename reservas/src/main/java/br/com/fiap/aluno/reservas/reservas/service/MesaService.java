@@ -11,10 +11,10 @@ import br.com.fiap.aluno.reservas.reservas.dto.MesaDTO;
 import br.com.fiap.aluno.reservas.reservas.entities.Mesa;
 import br.com.fiap.aluno.reservas.reservas.repository.MesaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 
 // @service faz com que o spring coloque esta classe no pull de injeção de dependencia
@@ -31,12 +31,15 @@ public class MesaService {
         this.mesaRepository = mesaRepository;
     }
 
-
     public Page<MesaDTO> findAll(Pageable pageable){
         Page<Mesa> mesas = mesaRepository.findAll(pageable);
         return mesas.map(this::toDTO);
     }
 
+    //public MesaDTO findById(Long id){
+    //    Mesa mesa = mesaRepository.findById(id);
+
+    //}
 
     private MesaDTO toDTO(Mesa mesa) {
         return new MesaDTO(

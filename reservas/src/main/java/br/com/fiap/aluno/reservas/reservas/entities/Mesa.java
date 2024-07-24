@@ -2,7 +2,7 @@ package br.com.fiap.aluno.reservas.reservas.entities;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -14,13 +14,13 @@ public class Mesa {
     private int numero;
     private int quantidadeDeLugares;
     private boolean estaOcupado;
-    private LocalDate inicioDaReserva;
-    private LocalDate reservadoAte;
+    private LocalDateTime inicioDaReserva;
+    private LocalDateTime reservadoAte;
 
     public Mesa() {
     }
 
-    public Mesa(Long id, int numero, int quantidadeDeLugares, boolean estaOcupado, LocalDate inicioDaReserva, LocalDate reservadoAte) {
+    public Mesa(Long id, int numero, int quantidadeDeLugares, boolean estaOcupado, LocalDateTime inicioDaReserva, LocalDateTime reservadoAte) {
         this.id = id;
         this.numero = numero;
         this.quantidadeDeLugares = quantidadeDeLugares;
@@ -33,7 +33,7 @@ public class Mesa {
         return id;
     }
 
-    public void setId() {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -41,7 +41,7 @@ public class Mesa {
         return numero;
     }
 
-    public void setNumero() {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
@@ -49,7 +49,7 @@ public class Mesa {
         return quantidadeDeLugares;
     }
 
-    public void setQuantidadeDeLugares() {
+    public void setQuantidadeDeLugares(int quantidadeDeLugares) {
         this.quantidadeDeLugares = quantidadeDeLugares;
     }
 
@@ -57,23 +57,23 @@ public class Mesa {
         return estaOcupado;
     }
 
-    public void setEstaOcupado(){
+    public void setEstaOcupado(boolean estaOcupado){
         this.estaOcupado = estaOcupado;
     }
 
-    public LocalDate getInicioDaReserva(){
+    public LocalDateTime getInicioDaReserva(){
         return inicioDaReserva;
     }
 
-    public void setInicioDaReserva(){
+    public void setInicioDaReserva(LocalDateTime inicioDaReserva){
         this.inicioDaReserva = inicioDaReserva;
     }
 
-    public LocalDate getReservadoAte(){
+    public LocalDateTime getReservadoAte(){
         return reservadoAte;
     }
 
-    public void setReservadoAte(){
+    public void setReservadoAte(LocalDateTime reservadoAte){
         this.reservadoAte = reservadoAte;
     }
 
@@ -98,7 +98,7 @@ public class Mesa {
                 ", quantidadeDeLugares='" + quantidadeDeLugares + '\'' +
                 ", estaOcupado='" + estaOcupado + '\'' +
                 ", inicioDaReserva='" + inicioDaReserva + '\'' +
-                ", reservadoAte='" + reservadoAte +
+                ", reservadoAte=" + reservadoAte +
                 '}';
     }
 }
