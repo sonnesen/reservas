@@ -7,14 +7,18 @@ package br.com.fiap.aluno.reservas.reservas.service;
 // service: toda logica nas operaçoes de negócio na arquitetura de camadas
 // repository: faz abstracao do banco de dados para salvar e persistir os dados
 
+import br.com.fiap.aluno.reservas.reservas.controller.exception.ControllerNotFoundException;
 import br.com.fiap.aluno.reservas.reservas.dto.MesaDTO;
 import br.com.fiap.aluno.reservas.reservas.entities.Mesa;
 import br.com.fiap.aluno.reservas.reservas.repository.MesaRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+
 
 
 // @service faz com que o spring coloque esta classe no pull de injeção de dependencia
@@ -36,10 +40,39 @@ public class MesaService {
         return mesas.map(this::toDTO);
     }
 
-    //public MesaDTO findById(Long id){
-    //    Mesa mesa = mesaRepository.findById(id);
+    public MesaDTO findById(Long id){
+        Mesa mesa = mesaRepository.findById(id).orElseThrow(() -> new ControllerNotFoundException("mesa não encontrada"));
+        return toDTO(mesa);
+    }
 
-    //}
+
+    public MesaDTO save(MesaDTO mesaDTO){
+        Mesa mesa = toEntity(mesaDTO);
+        mesa = mesaRepository.save(mesa);
+        return toDTO(mesa);
+    }
+
+    public MesaDTO update(Long id, MesaDTO mesaDTO){
+        try {
+            Mesa mesa = mesaRepository.getReferenceById(id);
+            mesa.setNumero(mesaDTO.numero());
+            mesa.setQuantidadeDeLugares(mesaDTO.quantidadeDeLugares());
+            mesa.setEstaOcupado(mesaDTO.estaOcupado());
+            mesa.setInicioDaReserva(mesaDTO.inicioDaReserva());
+            mesa.setReservadoAte(mesaDTO.reservadoAte());
+
+            mesa = mesaRepository.save(mesa);
+
+            return toDTO(mesa);
+
+        } catch(EntityNotFoundException e) {
+            throw new ControllerNotFoundException("mesa nao encontrada");
+        }
+    }
+
+    public void delete(Long id){
+        mesaRepository.deleteById(id);
+    }
 
     private MesaDTO toDTO(Mesa mesa) {
         return new MesaDTO(
