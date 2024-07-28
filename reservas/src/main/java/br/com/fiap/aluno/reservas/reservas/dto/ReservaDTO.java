@@ -2,12 +2,12 @@ package br.com.fiap.aluno.reservas.reservas.dto;
 
 import java.time.LocalDateTime;
 
-public record MesaDTO(
+public record ReservaDTO(
         Long id,
-        int numero,
-        int quantidadeDeLugares,
-        boolean estaOcupado,
+        String responsavel,
+        String email,
+        int telefone,
         LocalDateTime inicioDaReserva,
-        LocalDateTime reservadoAte
+        String status
 ) {
 }
