@@ -16,17 +16,19 @@ public class Reserva {
     private int telefone;
     private LocalDateTime inicioDaReserva;
     private String status;
+    private int quantidadedeLugares;
 
     public Reserva() {
     }
 
-    public Reserva(Long id, String responsavel, String email, int telefone, LocalDateTime inicioDaReserva, String status) {
+    public Reserva(Long id, String responsavel, String email, int telefone, LocalDateTime inicioDaReserva, String status, int quantidadedeLugares) {
         this.id = id;
         this.responsavel = responsavel;
         this.email = email;
         this.telefone = telefone;
         this.inicioDaReserva = inicioDaReserva;
         this.status = status;
+        this.quantidadedeLugares = quantidadedeLugares;
     }
 
     public Long getId() {
@@ -77,6 +79,11 @@ public class Reserva {
         this.status = status;
     }
 
+    public int getQuantidadedeLugares() { return quantidadedeLugares;}
+
+    public void setQuantidadedeLugares(int quantidadedeLugares) {this.quantidadedeLugares = quantidadedeLugares;}
+
+
     @Override
     public boolean equals(Object o){
         if (this == o) return true;
@@ -99,6 +106,7 @@ public class Reserva {
                 ", telefone='" + telefone + '\'' +
                 ", inicioDaReserva='" + inicioDaReserva + '\'' +
                 ", status=" + status +
+                ", quantidadeDeLugares=" + quantidadedeLugares +
                 '}';
     }
 }
