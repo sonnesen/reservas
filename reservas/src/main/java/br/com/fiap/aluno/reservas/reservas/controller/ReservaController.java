@@ -24,7 +24,7 @@ public class ReservaController {
 
     @GetMapping
     public ResponseEntity<Page<ReservaDTO>> findAll(
-            @PageableDefault(size = 10, page = 0, sort = "numero")Pageable pageable
+            @PageableDefault(size = 10, page = 0, sort = "inicioDaReserva")Pageable pageable
             ){
         Page<ReservaDTO> reservasDTO = reservaService.findAll(pageable);
         return ResponseEntity.ok(reservasDTO);
