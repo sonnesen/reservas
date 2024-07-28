@@ -8,6 +8,7 @@ public record ReservaDTO(
         String email,
         int telefone,
         LocalDateTime inicioDaReserva,
-        String status
+        String status,
+        int quantidadeDeLugares
 ) {
 }

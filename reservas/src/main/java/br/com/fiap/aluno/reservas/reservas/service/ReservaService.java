@@ -60,6 +60,7 @@ public class ReservaService {
             reserva.setTelefone(reservaDTO.telefone());
             reserva.setInicioDaReserva(reservaDTO.inicioDaReserva());
             reserva.setStatus(reservaDTO.status());
+            reserva.setQuantidadedeLugares(reservaDTO.quantidadeDeLugares());
 
             reserva = reservaRepository.save(reserva);
 
@@ -81,7 +82,8 @@ public class ReservaService {
                 reserva.getEmail(),
                 reserva.getTelefone(),
                 reserva.getInicioDaReserva(),
-                reserva.getStatus()
+                reserva.getStatus(),
+                reserva.getQuantidadedeLugares()
         );
     }
 
@@ -92,7 +94,8 @@ public class ReservaService {
                 reservaDTO.email(),
                 reservaDTO.telefone(),
                 reservaDTO.inicioDaReserva(),
-                reservaDTO.status()
+                reservaDTO.status(),
+                reservaDTO.quantidadeDeLugares()
         );
     }
 
