@@ -54,7 +54,11 @@ public class ReservaController {
     }
 
 
-
+    @PutMapping("/{id}/efetiva")
+    public ResponseEntity<ReservaDTO> efetiva(@PathVariable Long id){
+        ReservaDTO updatedReserva = reservaService.efetiva(id);
+        return ResponseEntity.ok(updatedReserva);
+    }
 
 
 
