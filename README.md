@@ -10,7 +10,7 @@ Este projeto é uma API que permite que os clientes de um restaurante consigam r
 - Spring Data JPA
 
 ##### Pré-requisitos
-  - Java JDK 17
+- Java JDK 17
 - Maven
 
 ##### Instalação 
@@ -24,9 +24,27 @@ Este projeto é uma API que permite que os clientes de um restaurante consigam r
 
 | Verbo | Recurso | Finalidade|
 | ------ | ------ |------|
-| GET!!!! | /reserva |obtém todas reservas|
-| GET!!!! | /reserva/{id} |obtém uma reserva específica|
-| POST!!! | /reserva|envia uma reserva|
-| PUT! | /reserva{id}|edita uma reserva|
-| DELETE!! | /reserva{id}|apaga uma reserva|
-| POST!!! | /atendimento |libera uma reserva para ir para mesa|
+| GET | /reserva |obtém todas reservas|
+| GET | /reserva/{id} |obtém uma reserva específica|
+| POST | /reserva|envia uma reserva|
+| PUT | /reserva{id}|edita uma reserva|
+| DELETE | /reserva{id}|apaga uma reserva|
+| POST | /atendimento |libera uma reserva para ir para mesa|
+
+
+##### Exemplo do fluxo de uso
+
+O cliente que deseja reservar uma mesa em um estabelecimento, necessita informar ao sistema algumas informações para a reserva, via json no endereço POST /reserva. 
+   
+   ```
+   {
+    "responsavel": "tayna",
+    "email": "felipe1@yajima.com",
+    "telefone": 2222221,
+    "inicioDaReserva": "2020-12-03T11:33:30",
+    "status": "aguardando",
+    "quantidadeDeLugares": 10
+}
+```
+
+
