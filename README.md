@@ -38,12 +38,12 @@ O cliente que deseja reservar uma mesa em um estabelecimento, necessita informar
    
    ```
    {
-    "responsavel": "tayna",
-    "email": "felipe1@yajima.com",
-    "telefone": 2222221,
-    "inicioDaReserva": "2020-12-03T11:33:30",
+    "responsavel": "joão batista",
+    "email": "joao@batista.com",
+    "telefone": 11900000000,
+    "inicioDaReserva": "2024-08-03T11:33:30",
     "status": "aguardando",
-    "quantidadeDeLugares": 10
+    "quantidadeDeLugares": 5
 }
 ```
 
