@@ -47,4 +47,5 @@ O cliente que deseja reservar uma mesa em um estabelecimento, necessita informar
 }
 ```
 
+Ao enviar sua requisição de reserva, a reserva do cliente entrará na fila virtual, e assim que uma mesa for liberada no restaurante, o garçom ou atendente irá lançar no sistema uma nova liberação no endereço POST /atendimento. Nesta liberação, o garçom irá informar no body da requisição a quantidade de lugares da mesa que foi liberada. O sistema avaliará os clientes em ordem de chegada e irá liberar a reserva com quantidade compatível de lugares para sair da fila e ir para a mesa.
 
