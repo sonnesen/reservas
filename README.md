@@ -24,9 +24,9 @@ Este projeto é uma API que permite que os clientes de um restaurante consigam r
 
 | Verbo | Recurso | Finalidade|
 | ------ | ------ |------|
-| GET | /reserva |obtém todas reservas|
-| GET | /reserva/{id} |obtém uma reserva específica|
-| POST | /reserva|envia uma reserva|
-| PUT | /reserva{id}|edita uma reserva|
-| DELETE | /reserva{id}|apaga uma reserva|
-| POST | /atendimento |libera uma reserva para ir para mesa|
+| GET!!!! | /reserva |obtém todas reservas|
+| GET!!!! | /reserva/{id} |obtém uma reserva específica|
+| POST!!! | /reserva|envia uma reserva|
+| PUT! | /reserva{id}|edita uma reserva|
+| DELETE!! | /reserva{id}|apaga uma reserva|
+| POST!!! | /atendimento |libera uma reserva para ir para mesa|
