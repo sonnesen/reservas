@@ -24,14 +24,14 @@ Este projeto é uma API que permite que os clientes de um restaurante consigam r
 
 | Verbo | Recurso | Finalidade|
 | ------ | ------ |------|
-| GET | /reserva |obtém todas reservas|
-| GET | /reserva/{id} |obtém uma reserva específica|
-| POST | /reserva|envia uma reserva|
-| PUT | /reserva{id}|edita uma reserva|
-| DELETE | /reserva{id}|apaga uma reserva|
-| PUT | /reserva{id}/valida|ao chegar na fila do restaurante, o cliente precisa validar sua presença|
-| PUT | /reserva{id}/encerra|na finalização dos serviços, o restaurante encerra o serviço|
-| PUT | /reserva{id}/cancela|realiza o cancelamento automático caso o cliente não valide a reserva em um tempo hábil|
+| GET | /reservas |obtém todas reservas|
+| GET | /reservas/{id} |obtém uma reserva específica|
+| POST | /reservas|envia uma reserva|
+| PUT | /reservas/{id}|edita uma reserva|
+| DELETE | /reservas/{id}|apaga uma reserva|
+| PUT | /reservas/{id}/valida|ao chegar na fila do restaurante, o cliente precisa validar sua presença|
+| PUT | /reservas/{id}/encerra|na finalização dos serviços, o restaurante encerra o serviço|
+| PUT | /reservas/{id}/cancela|realiza o cancelamento automático caso o cliente não valide a reserva em um tempo hábil|
 | POST | /atendimento |libera uma reserva para ir para mesa|
 
 
@@ -44,8 +44,6 @@ O cliente que deseja reservar uma mesa em um estabelecimento, necessita informar
     "responsavel": "joão batista",
     "email": "joao@batista.com",
     "telefone": 11900000000,
-    "inicioDaReserva": "2024-08-03T11:33:30",
-    "status": "aguardando",
     "quantidadeDeLugares": 5
 }
 ```
