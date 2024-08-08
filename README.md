@@ -29,6 +29,9 @@ Este projeto é uma API que permite que os clientes de um restaurante consigam r
 | POST | /reserva|envia uma reserva|
 | PUT | /reserva{id}|edita uma reserva|
 | DELETE | /reserva{id}|apaga uma reserva|
+| PUT | /reserva{id}/valida|ao chegar na fila do restaurante, o cliente precisa validar sua presença|
+| PUT | /reserva{id}/encerra|na finalização dos serviços, o restaurante encerra o serviço|
+| PUT | /reserva{id}/cancela|realiza o cancelamento automático caso o cliente não valide a reserva em um tempo hábil|
 | POST | /atendimento |libera uma reserva para ir para mesa|
 
 
