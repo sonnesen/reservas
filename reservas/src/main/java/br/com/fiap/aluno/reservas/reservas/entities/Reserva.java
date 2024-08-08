@@ -26,8 +26,8 @@ public class Reserva {
         this.responsavel = responsavel;
         this.email = email;
         this.telefone = telefone;
-        this.inicioDaReserva = inicioDaReserva;
-        this.status = status;
+        this.inicioDaReserva = LocalDateTime.now();
+        this.status = "agendado";
         this.quantidadedeLugares = quantidadedeLugares;
     }
 
