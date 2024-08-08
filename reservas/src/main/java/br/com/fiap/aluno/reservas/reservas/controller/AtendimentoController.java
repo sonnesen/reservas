@@ -35,7 +35,7 @@ public class AtendimentoController {
             if (reservasDTO.getContent().get(i).status().equals("aguardando") && reservasDTO.getContent().get(i).quantidadeDeLugares() <= quantidadeLugaresMesaLiberada) {
                 System.out.println(i);
 
-                ResponseEntity.ok(reservaService.efetiva(reservasDTO.getContent().get(i).id()));
+                ResponseEntity.ok(reservaService.aloca(reservasDTO.getContent().get(i).id()));
                 opa = reservasDTO.getContent().get(i).id();
 
                 break;

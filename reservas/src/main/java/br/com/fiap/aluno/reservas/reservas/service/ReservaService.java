@@ -98,14 +98,61 @@ public class ReservaService {
                 reservaDTO.quantidadeDeLugares()
         );
     }
-    public ReservaDTO efetiva(Long id){
+    public ReservaDTO valida(Long id){
         try {
             Reserva reserva = reservaRepository.getReferenceById(id);
-            //reserva.setResponsavel(reservaDTO.responsavel());
-            //reserva.setEmail(reservaDTO.email());
-            //reserva.setTelefone(reservaDTO.telefone());
-            //reserva.setInicioDaReserva(reservaDTO.inicioDaReserva());
-            reserva.setStatus("atendido");
+
+            if (reserva.getStatus().equals("agendado")){
+                reserva.setStatus("aguardando");
+                reserva = reservaRepository.save(reserva);
+                return toDTO(reserva);
+            } else {
+                throw new ControllerNotFoundException("reserva não está no status agendado");
+            }
+
+        } catch(EntityNotFoundException e) {
+            throw new ControllerNotFoundException("reserva nao encontrada");
+        }
+
+    }
+
+    public ReservaDTO aloca(Long id){
+        try {
+            Reserva reserva = reservaRepository.getReferenceById(id);
+            if (reserva.getStatus().equals("aguardando")) {
+                reserva.setStatus("alocado");
+                reserva = reservaRepository.save(reserva);
+                return toDTO(reserva);
+            } else {
+                throw new ControllerNotFoundException("reserva não está no status aguardando");
+            }
+
+        } catch(EntityNotFoundException e) {
+            throw new ControllerNotFoundException("reserva nao encontrada");
+        }
+
+    }
+
+    public ReservaDTO encerra(Long id){
+        try {
+            Reserva reserva = reservaRepository.getReferenceById(id);
+            if (reserva.getStatus().equals("alocado")) {
+                reserva.setStatus("encerrado");
+                reserva = reservaRepository.save(reserva);
+                return toDTO(reserva);
+            } else {
+                throw new ControllerNotFoundException("reserva não está no status alocado");
+            }
+        } catch(EntityNotFoundException e) {
+            throw new ControllerNotFoundException("reserva nao encontrada");
+        }
+
+    }
+
+    public ReservaDTO cancela(Long id){
+        try {
+            Reserva reserva = reservaRepository.getReferenceById(id);
+            reserva.setStatus("cancelado");
 
             reserva = reservaRepository.save(reserva);
 

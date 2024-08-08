@@ -54,12 +54,29 @@ public class ReservaController {
     }
 
 
-    @PutMapping("/{id}/efetiva")
-    public ResponseEntity<ReservaDTO> efetiva(@PathVariable Long id){
-        ReservaDTO updatedReserva = reservaService.efetiva(id);
+    @PutMapping("/{id}/valida")
+    public ResponseEntity<ReservaDTO> valida(@PathVariable Long id){
+        ReservaDTO updatedReserva = reservaService.valida(id);
         return ResponseEntity.ok(updatedReserva);
     }
 
+    //@PutMapping("/{id}/aloca")
+    //public ResponseEntity<ReservaDTO> aloca(@PathVariable Long id){
+    //    ReservaDTO updatedReserva = reservaService.aloca(id);
+    //    return ResponseEntity.ok(updatedReserva);
+    //}
+
+    @PutMapping("/{id}/encerra")
+    public ResponseEntity<ReservaDTO> encerra(@PathVariable Long id){
+        ReservaDTO updatedReserva = reservaService.encerra(id);
+        return ResponseEntity.ok(updatedReserva);
+    }
+
+    @PutMapping("/{id}/cancela")
+    public ResponseEntity<ReservaDTO> cancela(@PathVariable Long id){
+        ReservaDTO updatedReserva = reservaService.cancela(id);
+        return ResponseEntity.ok(updatedReserva);
+    }
 
 
 }
