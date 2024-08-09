@@ -1,4 +1,4 @@
-# Reserva Rápida
+# Reserva Rápida - Projeto Pós FIAP
 ##### _Facilidade ao reservar_
 
 Este projeto é uma API que permite que os clientes de um restaurante consigam reservar lugares em uma mesa, facilitando assim toda a organização e previsibilidade de atendimento na hora certa.
