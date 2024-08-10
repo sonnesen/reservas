@@ -53,6 +53,7 @@ Ao enviar sua requisição, sua reserva estará com o status 'agendado'. Assim q
 
 Assim que uma mesa for liberada no restaurante, o garçom ou atendente irá lançar no sistema uma nova liberação no endereço POST /atendimento. Nesta liberação, o garçom irá informar no body da requisição a quantidade de lugares da mesa que foi liberada. O sistema avaliará os clientes em ordem de chegada e irá liberar a reserva com quantidade compatível de lugares para sair da fila e ir para a mesa. O Garçom irá recepcionar o cliente cuja reserva foi liberada e alocar na mesa. 
 
+   ```
 POST /atendimento
 
 {
@@ -64,7 +65,7 @@ POST /atendimento
     "status": "alocado",
     "quantidadeDeLugares": 10
 }
-
+```
 
 
 Por fim, assim que os serviços forem finalizados para o cliente com o pagamento, o status da reserva mudará para 'encerrado'.
