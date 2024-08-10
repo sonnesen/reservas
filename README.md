@@ -40,7 +40,7 @@ Este projeto é uma API que permite que os clientes de um restaurante consigam r
 O cliente que deseja reservar uma mesa em um estabelecimento, necessita informar ao sistema algumas informações para a reserva. 
    
    ```
-POST /reserva
+POST /reserva - REQUEST BODY
    {
     "responsavel": "joão batista",
     "email": "joao@batista.com",
@@ -54,7 +54,7 @@ Ao enviar sua requisição, sua reserva estará com o status 'agendado'. Assim q
 Assim que uma mesa for liberada no restaurante, o garçom ou atendente irá lançar no sistema uma nova liberação no endereço POST /atendimento. Nesta liberação, o garçom irá informar no body da requisição a quantidade de lugares da mesa que foi liberada. O sistema avaliará os clientes em ordem de chegada e irá liberar a reserva com quantidade compatível de lugares para sair da fila e ir para a mesa. O Garçom irá recepcionar o cliente cuja reserva foi liberada e alocar na mesa. 
 
    ```
-POST /atendimento
+POST /atendimento - RESPONSE BODY
 
 {
     "id": 1,
