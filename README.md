@@ -44,7 +44,7 @@ POST /reserva - REQUEST BODY
    {
     "responsavel": "joão batista",
     "email": "joao@batista.com",
-    "telefone": 11900000000,
+    "telefone": "11900000000",
     "quantidadeDeLugares": 5
    }
 ```
@@ -60,7 +60,7 @@ POST /atendimento - RESPONSE BODY
     "id": 1,
     "responsavel": "Rodrigo Silva",
     "email": "rodrigo@silva.com",
-    "telefone": 1190111110,
+    "telefone": "1190111110",
     "inicioDaReserva": "2024-08-10T10:42:18.638746",
     "status": "alocado",
     "quantidadeDeLugares": 10
