@@ -13,7 +13,7 @@ public class Reserva {
     private Long id;
     private String responsavel;
     private String email;
-    private int telefone;
+    private String telefone;
     private LocalDateTime inicioDaReserva;
     private String status;
     private int quantidadedeLugares;
@@ -21,7 +21,7 @@ public class Reserva {
     public Reserva() {
     }
 
-    public Reserva(Long id, String responsavel, String email, int telefone, LocalDateTime inicioDaReserva, String status, int quantidadedeLugares) {
+    public Reserva(Long id, String responsavel, String email, String telefone, LocalDateTime inicioDaReserva, String status, int quantidadedeLugares) {
         this.id = id;
         this.responsavel = responsavel;
         this.email = email;
@@ -55,11 +55,11 @@ public class Reserva {
         this.email = email;
     }
 
-    public int getTelefone(){
+    public String getTelefone(){
         return telefone;
     }
 
-    public void setTelefone(int telefone){
+    public void setTelefone(String telefone){
         this.telefone = telefone;
     }
 

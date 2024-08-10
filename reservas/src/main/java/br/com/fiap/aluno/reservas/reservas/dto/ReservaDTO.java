@@ -6,7 +6,7 @@ public record ReservaDTO(
         Long id,
         String responsavel,
         String email,
-        int telefone,
+        String telefone,
         LocalDateTime inicioDaReserva,
         String status,
         int quantidadeDeLugares
