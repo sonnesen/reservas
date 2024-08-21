@@ -1,0 +1,44 @@
+### Listar todas as reservas
+GET http://localhost:8080/reservas HTTP/1.1
+
+### Recuperar reserva 1
+GET http://localhost:8080/reservas/1 HTTP/1.1
+
+### Recuperar reserva 2
+GET http://localhost:8080/reservas/2 HTTP/1.1
+
+### Criar reserva 1
+POST http://localhost:8080/reservas HTTP/1.1
+content-type: application/json
+
+{
+    "responsavel": "Fulano de Tal",
+    "email": "fulano.tal@mail.com",
+    "telefone": "11900000000",
+    "quantidadeDeLugares": 5
+}
+
+### Criar reserva 2
+POST http://localhost:8080/reservas HTTP/1.1
+content-type: application/json
+
+{
+    "responsavel": "Beltrano da Silva",
+    "email": "beltrano.silva@mail.com",
+    "telefone": "11900000001",
+    "quantidadeDeLugares": 2
+}
+
+### Editar uma reserva
+PUT http://localhost:8080/reservas/1 HTTP/1.1
+content-type: application/json
+
+{
+    "responsavel": "Fulano de Tal",
+    "email": "fulano.tal@mail.com",
+    "telefone": "11900000000",
+    "quantidadeDeLugares": 4
+}
+
+### Validar comparecimento
+PUT http://localhost:8080/reservas/2/valida HTTP/1.1
